@@ -58,14 +58,25 @@ function updateNavbar() {
   if (!authLinks) return;
 
   if (user) {
+    const initial = user.name.charAt(0).toUpperCase();
+    const firstName = user.name.split(' ')[0];
     authLinks.innerHTML = `
-      <li><a href="profile.html">👤 ${user.name.split(' ')[0]}</a></li>
-      <li><a href="#" onclick="Auth.logout(); return false;">Logout</a></li>
+      <li class="user-menu">
+        <a href="profile.html" class="user-pill">
+          <span class="user-avatar">${initial}</span>
+          <span class="user-name">${firstName}</span>
+        </a>
+        <button class="logout-btn" onclick="Auth.logout()" title="Log out" aria-label="Log out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </li>
     `;
   } else {
     authLinks.innerHTML = `
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Sign Up</a></li>
+      <li class="auth-buttons">
+        <a href="login.html" class="nav-login">Log in</a>
+        <a href="register.html" class="btn btn-accent nav-signup">Sign up</a>
+      </li>
     `;
   }
 }
