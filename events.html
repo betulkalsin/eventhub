@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Events — EventHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="create-event.html">Create Event</a></li>
+      <li><a href="about.html">About</a></li>
+      <li id="authLinks"></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Explore</div>
+      <h2 class="section-title">All Events</h2>
+      <p class="section-subtitle">Find workshops, meetups, and experiences tailored to your interests.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="searchInput">🔍 Search</label>
+        <input type="text" id="searchInput" placeholder="Search by name, location, or keyword...">
+      </div>
+      <div class="filter-group">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Technology">Technology</option>
+          <option value="Design">Design</option>
+          <option value="Music">Music</option>
+          <option value="Art">Art</option>
+          <option value="Business">Business</option>
+          <option value="Health">Health</option>
+          <option value="Food">Food</option>
+          <option value="Education">Education</option>
+          <option value="Sports">Sports</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="priceFilter">Price</label>
+        <select id="priceFilter">
+          <option value="">All Prices</option>
+          <option value="free">Free</option>
+          <option value="paid">Paid</option>
+        </select>
+      </div>
+    </div>
+
+    <p style="color: var(--gray); margin-bottom: 1.5rem; font-weight: 500;" id="resultCount">Loading events...</p>
+
+    <div class="event-grid" id="eventsGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <a href="index.html" class="footer-logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <p>&copy; 2026 EventHub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details — EventHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="create-event.html">Create Event</a></li>
+      <li><a href="about.html">About</a></li>
+      <li id="authLinks"></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="event-detail" id="eventDetail"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <a href="index.html" class="footer-logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <p>&copy; 2026 EventHub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

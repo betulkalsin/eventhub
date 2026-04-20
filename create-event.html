@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Event — EventHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="create-event.html" class="active">Create Event</a></li>
+      <li><a href="about.html">About</a></li>
+      <li id="authLinks"></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="form-container wide">
+    <h2>Host an Event</h2>
+    <p class="form-intro">Share your passion — create a workshop or event for the community.</p>
+
+    <form id="createEventForm">
+      <div class="form-group">
+        <label for="title">Event Title *</label>
+        <input type="text" id="title" placeholder="e.g. Modern React Masterclass" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description *</label>
+        <textarea id="description" placeholder="Tell attendees what to expect, who should attend, and what they'll learn..." required></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" required>
+            <option value="">Select category...</option>
+            <option value="Technology">Technology</option>
+            <option value="Design">Design</option>
+            <option value="Music">Music</option>
+            <option value="Art">Art</option>
+            <option value="Business">Business</option>
+            <option value="Health">Health</option>
+            <option value="Food">Food</option>
+            <option value="Education">Education</option>
+            <option value="Sports">Sports</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="icon">Emoji Icon (optional)</label>
+          <input type="text" id="icon" placeholder="🎉" maxlength="2">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date & Time *</label>
+        <input type="datetime-local" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location *</label>
+        <input type="text" id="location" placeholder="e.g. New York City, NY or Online (Zoom)" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="capacity">Capacity *</label>
+          <input type="number" id="capacity" min="1" placeholder="30" required>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price ($)</label>
+          <input type="number" id="price" min="0" step="5" placeholder="0 for free event">
+        </div>
+      </div>
+
+      <div class="form-error" id="formError"></div>
+
+      <button type="submit" class="btn btn-accent btn-block">Publish Event</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <a href="index.html" class="footer-logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <p>&copy; 2026 EventHub. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

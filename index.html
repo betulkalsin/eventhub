@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub — Discover Workshops & Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="create-event.html">Create Event</a></li>
+      <li><a href="about.html">About</a></li>
+      <li id="authLinks"></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✨ Where experiences meet people</div>
+    <h1>Discover amazing <span class="highlight">events & workshops</span> near you</h1>
+    <p>Join a thriving community of learners, creators, and innovators. From tech meetups to art classes — find your next great experience.</p>
+    <div class="hero-buttons">
+      <a href="events.html" class="btn btn-accent">Browse Events</a>
+      <a href="create-event.html" class="btn btn-secondary">Host an Event →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="statEvents">18+</div>
+        <div class="hero-stat-label">Active Events</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="statAttendees">700+</div>
+        <div class="hero-stat-label">Total Attendees</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="statCities">15</div>
+        <div class="hero-stat-label">Cities</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Browse by category</div>
+      <h2 class="section-title">What are you into?</h2>
+      <p class="section-subtitle">Explore events across diverse categories and find something that sparks your interest.</p>
+    </div>
+
+    <div class="categories">
+      <a href="events.html?category=Technology" class="category-card">
+        <div class="category-icon">💻</div>
+        <h3>Technology</h3>
+        <div class="count" data-category-count="Technology">0 events</div>
+      </a>
+      <a href="events.html?category=Design" class="category-card">
+        <div class="category-icon">🎨</div>
+        <h3>Design</h3>
+        <div class="count" data-category-count="Design">0 events</div>
+      </a>
+      <a href="events.html?category=Music" class="category-card">
+        <div class="category-icon">🎸</div>
+        <h3>Music</h3>
+        <div class="count" data-category-count="Music">0 events</div>
+      </a>
+      <a href="events.html?category=Art" class="category-card">
+        <div class="category-icon">📷</div>
+        <h3>Art</h3>
+        <div class="count" data-category-count="Art">0 events</div>
+      </a>
+      <a href="events.html?category=Business" class="category-card">
+        <div class="category-icon">💼</div>
+        <h3>Business</h3>
+        <div class="count" data-category-count="Business">0 events</div>
+      </a>
+      <a href="events.html?category=Health" class="category-card">
+        <div class="category-icon">🧘</div>
+        <h3>Health</h3>
+        <div class="count" data-category-count="Health">0 events</div>
+      </a>
+      <a href="events.html?category=Food" class="category-card">
+        <div class="category-icon">🍳</div>
+        <h3>Food</h3>
+        <div class="count" data-category-count="Food">0 events</div>
+      </a>
+      <a href="events.html?category=Sports" class="category-card">
+        <div class="category-icon">🏃</div>
+        <h3>Sports</h3>
+        <div class="count" data-category-count="Sports">0 events</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: white;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Trending now</div>
+      <h2 class="section-title">Featured Events</h2>
+      <p class="section-subtitle">The most popular upcoming events handpicked just for you.</p>
+    </div>
+    <div class="event-grid" id="featuredEvents"></div>
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="events.html" class="btn btn-primary">View All Events →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <a href="index.html" class="footer-logo">
+      <span class="logo-icon">E</span>
+      EventHub
+    </a>
+    <p>Discover, connect, and grow through amazing events.</p>
+    <hr class="footer-divider">
+    <p>&copy; 2026 EventHub. All rights reserved. · <a href="about.html">About</a></p>
+  </div>
+</footer>
+
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
