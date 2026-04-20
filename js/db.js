@@ -59,11 +59,12 @@ const CATEGORY_STYLES = {
    SEED DATA - Sample events (4+ per category)
    ============================================ */
 function seedData() {
-  if (localStorage.getItem('seeded_v3')) return;
+  if (localStorage.getItem('seeded_v4')) return;
 
   // Clean old versions
   localStorage.removeItem('seeded');
   localStorage.removeItem('seeded_v2');
+  localStorage.removeItem('seeded_v3');
 
   const sampleUsers = [
     { id: 1, name: 'Admin User', email: 'admin@eventhub.com', password: 'admin123', role: 'organizer' },
@@ -495,13 +496,114 @@ function seedData() {
       capacity: 48, registered: 32,
       organizerId: 1, organizerName: 'Admin User',
       icon: '🏐', price: 45
+    },
+
+    /* ========== FREE EVENTS (bonus) ========== */
+    {
+      id: 106,
+      title: 'Intro to Git & GitHub Workshop',
+      description: 'Master version control basics. Branching, merging, pull requests, and collaboration workflows every developer should know. Laptop required.',
+      category: 'Technology',
+      date: '2026-05-27T18:00',
+      location: 'Online (Zoom)',
+      capacity: 150, registered: 97,
+      organizerId: 3, organizerName: 'Michael Chen',
+      icon: '🐙', price: 0
+    },
+    {
+      id: 205,
+      title: 'Design Portfolio Review Night',
+      description: 'Bring your portfolio and get live feedback from senior designers. Network with other creatives over drinks. Walk away with actionable advice.',
+      category: 'Design',
+      date: '2026-06-18T19:00',
+      location: 'San Francisco, CA',
+      capacity: 40, registered: 28,
+      organizerId: 2, organizerName: 'Sarah Johnson',
+      icon: '💡', price: 0
+    },
+    {
+      id: 305,
+      title: 'Community Open Mic Night',
+      description: 'Singers, songwriters, and poets welcome. A warm, supportive space to share your art. Performers and listeners alike — everyone welcome.',
+      category: 'Music',
+      date: '2026-06-04T19:30',
+      location: 'Austin, TX',
+      capacity: 80, registered: 54,
+      organizerId: 2, organizerName: 'Sarah Johnson',
+      icon: '🎤', price: 0
+    },
+    {
+      id: 405,
+      title: 'Community Art Jam',
+      description: 'Casual drop-in drawing session. All materials provided. No skill required — just come, draw, and meet fellow art lovers.',
+      category: 'Art',
+      date: '2026-05-31T14:00',
+      location: 'Brooklyn, NY',
+      capacity: 30, registered: 19,
+      organizerId: 3, organizerName: 'Michael Chen',
+      icon: '🖍️', price: 0
+    },
+    {
+      id: 505,
+      title: 'Freelancer Networking Meetup',
+      description: 'Connect with fellow freelancers, designers, developers, and writers. Share tips, swap leads, and build your professional circle. Free drinks!',
+      category: 'Business',
+      date: '2026-06-26T18:30',
+      location: 'New York City, NY',
+      capacity: 60, registered: 39,
+      organizerId: 1, organizerName: 'Admin User',
+      icon: '🤝', price: 0
+    },
+    {
+      id: 605,
+      title: 'Morning Meditation in the Park',
+      description: 'Start your weekend with a guided outdoor meditation. Bring a mat or blanket. Perfect for beginners seeking peace and community.',
+      category: 'Health',
+      date: '2026-06-07T07:30',
+      location: 'Los Angeles, CA',
+      capacity: 50, registered: 33,
+      organizerId: 2, organizerName: 'Sarah Johnson',
+      icon: '☀️', price: 0
+    },
+    {
+      id: 705,
+      title: 'Farmers Market Food Tour',
+      description: 'Walk through the best local farmers market with a food writer. Sample seasonal produce, meet the farmers, and learn about sustainable eating.',
+      category: 'Food',
+      date: '2026-06-21T09:00',
+      location: 'Portland, OR',
+      capacity: 25, registered: 15,
+      organizerId: 3, organizerName: 'Michael Chen',
+      icon: '🥕', price: 0
+    },
+    {
+      id: 805,
+      title: 'Book Club: Non-Fiction Picks',
+      description: 'Monthly book club focused on thought-provoking non-fiction. This month: a bestselling title on habits and productivity. Coffee provided.',
+      category: 'Education',
+      date: '2026-07-01T18:00',
+      location: 'Seattle, WA',
+      capacity: 20, registered: 12,
+      organizerId: 1, organizerName: 'Admin User',
+      icon: '📚', price: 0
+    },
+    {
+      id: 905,
+      title: 'Beginner Running Group',
+      description: 'Couch-to-5K training group. Weekly guided runs for absolute beginners. Build stamina, make friends, and fall in love with running.',
+      category: 'Sports',
+      date: '2026-05-23T08:00',
+      location: 'Chicago, IL',
+      capacity: 40, registered: 26,
+      organizerId: 2, organizerName: 'Sarah Johnson',
+      icon: '👟', price: 0
     }
   ];
 
   DB.set('users', sampleUsers);
   DB.set('events', sampleEvents);
   DB.set('registrations', []);
-  localStorage.setItem('seeded_v3', 'true');
+  localStorage.setItem('seeded_v4', 'true');
 }
 
 seedData();
